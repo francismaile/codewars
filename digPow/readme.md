@@ -1,4 +1,4 @@
-#Playing with digits
+# Playing with digits
 
 Some numbers have funny properties. For example:
 
