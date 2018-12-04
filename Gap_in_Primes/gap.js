@@ -1,19 +1,18 @@
 function gap(g, m, n) {
 	const range = (start, stop, step) => Array.from({ length: (stop - start) / step }, (_, i) => start + (i * step));
 	let primes = range(2, n, 1);
-	let index = 0, found = 0;
-	while(index <=  primes[primes.length-1] && index <= 5) {
-		primes = primes.filter( (e, i, a) => {
-			return e === primes[index] || e % primes[index];
-		});
-		index += 1;
+	let p = 2;
+	for( let i = p; i <= n; i += p) {
+		primes[i] = 0;
 	}
+	p = p + primes.slice(p).findIndex( num => num > 0 );
+	console.log({p}, 'primes[p]', primes[p]);
+	return 'done';
 	return primes;
-	return [ primes[found], primes[found+1] ];
 }
 
 // console.time('test');
-console.log(gap(2, 100, 500));
+console.log(gap(2, 1, 100));
 // console.timeEnd('test');
 
 /*
