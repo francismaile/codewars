@@ -14,7 +14,26 @@ function whoIsNext(names, r) {
 	}
 }
 
+// one of the better solutions I found
+function whoNext(names, r) {
+  let len = names.length;
+	let  x = r;
+  while (x >= len) {
+		x -= len;
+		len *= 2;
+	}
+  return [Math.ceil(names.length * x / len)-1, names[Math.ceil(names.length * x / len)-1] ];
+}
 
+console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 52 ));
+console.log(whoNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 52 ));
+
+
+/* Output
+
+*/
+
+/*
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 8786));
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 61));
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 84508451));
@@ -27,19 +46,4 @@ console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 92979
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 1) ) // == "Sheldon"
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 52) ) // == "Penny"
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 7230702951) ) // == "Leonard"
-
-/* Output
-
-Rajesh
-Rajesh
-Sheldon
-Rajesh
-Howard
-Sheldon
-Howard
-Rajesh
-Rajesh
-Sheldon
-Penny
-Leonard
 */
