@@ -8,14 +8,14 @@ numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 2008 is
 written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in
 descending order: MDCLXVI.
 
-###Examples
+### Examples
 
 ```
 RomanNumerals.toRoman(1000); // should return 'M'
 RomanNumerals.fromRoman('M'); // should return 1000
 ```
 
-###Help
+### Help
 
 | Symbol  | Value           
 | --- |---|
